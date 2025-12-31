@@ -44,7 +44,7 @@ export const getProductById = async (id: string) => {
         with: {
             user: true, comments: {
                 with: {user: true},
-                orderBy: (comments, {desc}) => [desc(products.createdAt)]
+                orderBy: (comments, {desc}) => [desc(comments.createdAt)]
             }
         },
     })
