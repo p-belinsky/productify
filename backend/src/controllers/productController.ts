@@ -38,7 +38,7 @@ export const getMyProducts = async (req: Request, res: Response) => {
             return res.status(401).json({error: "Unauthorized"});
         }
 
-        const products = await queries.getProductById(userId);
+        const products = await queries.getProductsByUserId(userId);
         res.status(200).json(products);
 
 
@@ -53,7 +53,7 @@ export const createProduct = async (req: Request, res: Response) => {
         const {userId} = getAuth(req);
 
         if(!userId){
-            return res.status(404).json({error: "Unauthorized"});
+            return res.status(401).json({error: "Unauthorized"});
         }
 
         const {title, description, imageUrl} = req.body;
