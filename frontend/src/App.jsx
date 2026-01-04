@@ -5,8 +5,14 @@ import ProductPage from "./pages/ProductPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import CreatePage from "./pages/CreatePage.jsx";
 import EditProductPage from "./pages/EditProductPage.jsx";
+import useAuthRequest from "./hooks/useAuthRequest.js";
+import useUserSync from "./hooks/useUserSync.js";
 
 function App() {
+const {isClerkLoaded, isSignedIn} = useAuthRequest();
+useUserSync();
+
+if(!isClerkLoaded) return null;
 
   return (
     <div className='min-h-screen bg-base-100'>
