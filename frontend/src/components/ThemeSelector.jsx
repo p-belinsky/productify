@@ -47,6 +47,8 @@ function ThemeSelector() {
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);
         localStorage.setItem("theme", theme);
+
+
     }, [theme]);
     return (
         <div className="dropdown dropdown-end">
