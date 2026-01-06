@@ -36,7 +36,7 @@ function CommentSection({productId, comments=[], currentUserId}) {
                     />
                     <button
                     type='submit'
-                    className='btn btn-primary btn-sm btn-sqaure'
+                    className='btn btn-primary btn-sm btn-square'
                     disabled={createComment.isPending || !content.trim()}
                     >
                         {createComment.isPending ? (
